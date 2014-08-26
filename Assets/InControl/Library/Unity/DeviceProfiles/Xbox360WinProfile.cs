@@ -34,6 +34,7 @@ namespace InControl
 				"Controller (Xbox 360 Wireless Receiver for Windows)",
 				"XBOX 360 For Windows (Controller)",
 				"Controller (XEOX Gamepad)",
+				"USB GAMEPAD 8116",	//XEOX USB Gamepad
 			};
 
 			LastResortRegex = "360|xbox|catz";
