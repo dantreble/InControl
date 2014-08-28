@@ -20,7 +20,8 @@ namespace InControl
 
 			JoystickNames = new[]
 			{
-				"MotioninJoy Virtual Game Controller"
+				"MotioninJoy Virtual Game Controller",
+				"USB Joystick      ",	//Manette filaire PS3/PC Noire
 			};
 
 			Sensitivity = 1.0f;
