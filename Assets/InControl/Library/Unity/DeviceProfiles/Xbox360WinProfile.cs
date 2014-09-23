@@ -35,6 +35,7 @@ namespace InControl
 				"XBOX 360 For Windows (Controller)",
 				"Controller (XEOX Gamepad)",
 				"USB GAMEPAD 8116",	//XEOX USB Gamepad
+				"Controller (SL-6566)", //XBOX Speedlink XEOX SL-6566 Wireless Gamepad
 			};
 
 			LastResortRegex = "360|xbox|catz";
