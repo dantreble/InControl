@@ -56,6 +56,25 @@ namespace InControl
 		}
 
 
+		#if UNITY_ANDROID && INCONTROL_OUYA && !UNITY_EDITOR
+		void Start()
+		{
+			StartCoroutine( CheckForOuyaEverywhereSupport() );
+		}
+
+
+		IEnumerator CheckForOuyaEverywhereSupport()
+		{
+			while (!OuyaSDK.isIAPInitComplete())
+			{
+				yield return null;
+			}
+
+			OuyaEverywhereDeviceManager.Enable();
+		}
+		#endif
+
+
 		void Update()
 		{
 			if (!useFixedUpdate || Mathf.Approximately( Time.timeScale, 0.0f ))
@@ -74,8 +93,21 @@ namespace InControl
 		}
 
 
+		void OnApplicationFocus( bool focusState )
+		{
+			InputManager.OnApplicationFocus( focusState );
+		}
+
+
+		void OnApplicationPause( bool pauseState )
+		{
+			InputManager.OnApplicationPause( pauseState );
+		}
+
+
 		void OnApplicationQuit()
 		{
+			InputManager.OnApplicationQuit();
 		}
 
 
@@ -83,15 +115,15 @@ namespace InControl
 		{
 			switch (logMessage.type)
 			{
-			case LogMessageType.Info:
-				Debug.Log( logMessage.text );
-				break;
-			case LogMessageType.Warning:
-				Debug.LogWarning( logMessage.text );
-				break;
-			case LogMessageType.Error:
-				Debug.LogError( logMessage.text );
-				break;
+				case LogMessageType.Info:
+					Debug.Log( logMessage.text );
+					break;
+				case LogMessageType.Warning:
+					Debug.LogWarning( logMessage.text );
+					break;
+				case LogMessageType.Error:
+					Debug.LogError( logMessage.text );
+					break;
 			}
 		}
 	}
