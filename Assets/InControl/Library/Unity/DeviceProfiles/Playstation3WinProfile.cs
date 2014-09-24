@@ -23,6 +23,8 @@ namespace InControl
 				"MotioninJoy Virtual Game Controller",
 				"USB Joystick      ",	//Manette filaire PS3/PC Noire
 			};
+			
+			LastResortRegex = "PS3";
 
 			Sensitivity = 1.0f;
 			LowerDeadZone = 0.2f;

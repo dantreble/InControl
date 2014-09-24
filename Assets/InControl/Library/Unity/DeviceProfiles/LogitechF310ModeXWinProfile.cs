@@ -21,6 +21,7 @@ namespace InControl
 			JoystickNames = new[]
 			{
 				"Controller (Gamepad F310)",
+				"Gamepad F310 (Controller)",
 			};
 
 			Sensitivity = 1.0f;

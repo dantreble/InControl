@@ -20,7 +20,8 @@ namespace InControl
 
 			JoystickNames = new[]
 			{
-				"Controller (Wireless Gamepad F710)"
+				"Controller (Wireless Gamepad F710)",
+				"Wireless Gamepad F710 (Controller)",
 			};
 
 			Sensitivity = 1.0f;
